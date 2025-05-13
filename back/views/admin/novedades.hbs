@@ -1,0 +1,65 @@
+<!-- views/admin/novedades.hbs -->
+<div class="container" style="margin-top: 50px;">
+  <!-- Fila 1: Mensaje de bienvenida y botón de cerrar sesión -->
+  <div class="row">
+    <p class="text-end">
+      Hola {{nombre}}! 
+      <a class="btn btn-danger" href="/admin/login/logout">
+        Cerrar sesión 
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </p>
+  </div>
+
+  <!-- Fila 2: Título -->
+  <div class="row">
+    <div class="col-7">
+      <h3>Listado de Productos</h3>
+    </div>
+    <div class="col-5 text-end">
+      <a class="btn btn-success" href="/admin/novedades/nuevo">
+        Nuevo
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Fila 3: Tabla de productos -->
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Imagen</th>
+            <th scope="col" class="text-end">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each productos}}
+            <tr>
+              <th scope="row">{{id}}</th>
+              <td>{{nombre}}</td>
+              <td>
+                {{#if img_id}}
+                  <img src="https://res.cloudinary.com/tu-cloud-name/image/upload/{{img_id}}" width="100" />
+                {{else}}
+                  Sin imagen
+                {{/if}}
+              </td>
+              <td class="text-end">
+                <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary">
+                  <i class="fa fa-pencil"></i>
+                </a>
+                <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary">
+                  <i class="fa fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
