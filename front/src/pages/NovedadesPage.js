@@ -3,6 +3,7 @@ import axios from 'axios';
 import NovedadItem from '../components/layout/novedades/novedadItem';
 
 
+
 const NovedadesPage = (props) => {
 
     const [loading, setLoading] = useState(false);

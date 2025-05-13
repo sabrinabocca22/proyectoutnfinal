@@ -1,4 +1,4 @@
-import logo from '../layout/logo192.png';
+import logo from '../layout/Gemini_Generated_Image_f70gfzf70gfzf70g.jpeg';
 
 
 
